@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart' as lottie;
 import 'models.dart'; // Make sure this file exists
-import 'quiz_screen.dart'; // We will create this new file
+import 'screens/quiz_screen.dart'; // We will create this new file
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

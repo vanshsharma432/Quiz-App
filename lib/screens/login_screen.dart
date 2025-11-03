@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart'; // <-- Add this import
 import 'package:flutter/material.dart';
-import 'auth_service.dart';
-import 'auth_text_field.dart';
-import 'appfonts.dart';
+import '../auth_service.dart';
+import '../auth_text_field.dart';
+import '../appfonts.dart';
 
 class LoginScreen extends StatefulWidget {
   final void Function()? onTap;
@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         // ... (your existing gradient decoration)
@@ -83,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Center(
           child: SingleChildScrollView(
             child: Container(
+              width: width>600 ? 500 : double.infinity,
               // ... (your existing card decoration)
               decoration: BoxDecoration(
                 color: Colors.white,

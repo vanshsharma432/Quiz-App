@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'models.dart';
-import 'appfonts.dart'; // Make sure this file exists
+import '../models.dart';
+import '../appfonts.dart'; // Make sure this file exists
 import 'results_screen.dart'; // Make sure this file exists
-import 'animations/sliding_animation.dart';
+import '../animations/sliding_animation.dart';
 
 class QuizScreen extends StatefulWidget {
   final List<Question> questions;
@@ -144,6 +144,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
     return Scaffold(
       body: Container(
+        width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.blue, Colors.deepPurpleAccent],
@@ -158,7 +159,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           alignment: Alignment.topLeft,
           padding: const EdgeInsets.all(16.0),
-          margin: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20.0),
+          margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: width>600 && width>height ? width*0.3 : 20),
           child: LayoutBuilder(
             builder: (context, constraints) {
               double childWidth = constraints.maxWidth;
@@ -228,7 +229,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       OutlinedButton(
                         onPressed: onPrevQuestion,
                         style: OutlinedButton.styleFrom(
-                          fixedSize: Size(width * 0.4, height * 0.06),
+                          fixedSize: Size(width>600 && width>height? 150:width * 0.33, height * 0.06),
                           side: BorderSide(
                             color: Colors.black,
                             width: height * 0.001,
@@ -250,7 +251,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         // Only enable "Next" after an answer is selected
                         onPressed: _isAnswered ? onNextQuestion : null,
                         style: OutlinedButton.styleFrom(
-                          fixedSize: Size(width * 0.3, height * 0.06),
+                          fixedSize: Size(width>600? 150:width * 0.3, height * 0.06),
                           backgroundColor: _isAnswered
                               ? Colors.blueAccent
                               : Colors.grey,

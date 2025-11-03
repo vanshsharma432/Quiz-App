@@ -41,9 +41,10 @@ class _HomeBarState extends State<HomeBar> {
               fontFamily: "Nunito",
             ),
           ),
+          SizedBox(height: 16),
           Center(
             child: HoveringImage(
-              hoverHeight: 30,
+              hoverHeight: 20,
               duration: Duration(seconds: 3),
               child: Image.asset(
                 'assets/images/quiz_icon.png',

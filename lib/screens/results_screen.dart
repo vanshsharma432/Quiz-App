@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/home.dart';
-import 'appfonts.dart'; // Using your custom fonts
-import 'loading.dart'; // To navigate back to the start
+import 'package:quiz_app/screens/home_screen.dart';
+import '../appfonts.dart'; // Using your custom fonts
+import '../loading.dart';
+import '../main.dart';
+import 'home_screen.dart';
 
 class ResultsScreen extends StatelessWidget {
   final int score;

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart'; // <-- Add this import
 import 'package:flutter/material.dart';
-import 'auth_service.dart';
-import 'auth_text_field.dart';
-import 'appfonts.dart';
+import '../auth_service.dart';
+import '../auth_text_field.dart';
+import '../appfonts.dart';
 
 class SignUpScreen extends StatefulWidget {
   final void Function()? onTap;
@@ -83,10 +83,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
-        // ... (your existing gradient decoration)
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.blue, Colors.deepPurpleAccent],
@@ -97,6 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Center(
           child: SingleChildScrollView(
             child: Container(
+              width: width>600 ? 500 : double.infinity,
               // ... (your existing card decoration)
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -161,12 +161,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Already a member? ", style: Appfonts.medbody),
+                      Text("Already a member? ", style: Appfonts.medbody.copyWith(fontSize:  width>350 ? 18 : 16)),
                       GestureDetector(
                         onTap: widget.onTap,
                         child: Text(
                           "Login now",
-                          style: Appfonts.medbodybold.copyWith(color: Colors.blueAccent),
+                          style: Appfonts.medbodybold.copyWith(color: Colors.blueAccent, fontSize:  width>350 ? 18 : 16),
                         ),
                       ),
                     ],

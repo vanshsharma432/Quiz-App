@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'auth_service.dart';
 import 'loading.dart';
-import 'login_or_signup.dart'; // <-- IMPORT THIS
+import 'login_or_signup.dart';
+import 'screens/home_screen.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -26,7 +27,7 @@ class AuthGate extends StatelessWidget {
         }
 
         // User is logged in, show the loading screen to fetch questions
-        return const Loading();
+        return  HomeScreen();
       },
     );
   }
